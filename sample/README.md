@@ -1,1 +1,1 @@
-Sample image: (@iaincollins Icarus 2022)
+Sample image: (@iaincollins [Icarus](https://github.com/iaincollins/icarus) 2022)
