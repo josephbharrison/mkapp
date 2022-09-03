@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Script variables
+script=$1
+script_base=$(basename -- "$script")
+app_name=${script_base%.*}
+
+# Icon variables
+icon=$1
+icon_base=$(basename -- "$script")
+icon_name=${icon_base%.*}
+
+# Print usage
+function usage(){
+    echo "usage: mkosx <script> <icon>"
+    echo
+    echo "args:"
+    echo "    script: shell script             ex: icarus.sh"
+    echo "    icon: mac os x icon file         ex: icarus.icns"
+}
+
+# Check script args
+[[ ! -f $script || -z $app_name ]] && echo "script error" && usage && exit 1
+
+# Check icon args
+[[ ! -f $icon || -z $icon_name ]] && echo "icon error" && usage && exit 1
+
+##### CREATE APP
+app_dir=${app_name}.app
+[[ -d $app_dir ]] && rm -R $app_dir || exit 1
+
+# Create MacOS ap/
+mkdir -p ${app_dir}/Contents/MacOS
+cp ${script} ${app_dir}/Contents/MacOS/${app_name}
+chmod +x ${app_dir}/Contents/MacOS/${app_name}
+
+# Create app resources
+mkdir -p ${app_dir}/Contents/Resources
+mv ${icon} ${app_dir}/Contents/Resources/${icon_name}.icns
+
+# Create property list
+sed -e "s/APP/${app_name}/g" -e "s/ICON/${icon_name}/g" templates/plist.template > ${app_dir}/Contents/Info.plist
+
+# Print results
+[[ $? == 0 ]] && echo "${app_name}.app" || exit 1

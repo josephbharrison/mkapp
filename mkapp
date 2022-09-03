@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Script variables
+script=$1
+
+# Image variables
+image=$2
+
+# Print usage
+function usage(){
+    echo "usage: mkapp <script> <image>"
+    echo
+    echo "args:"
+    echo "    script: shell script             ex: myapp.sh"
+    echo "    image: 1024 x 1024 PNG image     ex: icarus.png"
+}
+
+# Check script args
+[[ ! -f $script ]] && echo "script error" && usage && exit 1
+
+# Check image args
+[[ ! -f $image ]] && echo "image error" && usage && exit 1
+
+# Make icon
+icon=$(src/mkicon $image)
+
+# Make app
+app=$(src/mkosx $script $icon)
+
+# Cleanup
+rm -R ${icon}
