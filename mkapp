@@ -23,11 +23,10 @@ function usage(){
 
 # Make icon
 icon=$(src/mkicon $image)
-echo icon: $icon
 
 # Make app
 app=$(src/mkosx $script $icon)
-echo app: $app
 
-# # Cleanup
-# rm -R ${icon}
+# Print results
+[[ $? -gt 0 ]] && echo "error creating app" && exit 1
+echo $app
