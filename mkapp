@@ -23,9 +23,11 @@ function usage(){
 
 # Make icon
 icon=$(src/mkicon $image)
+echo icon: $icon
 
 # Make app
 app=$(src/mkosx $script $icon)
+echo app: $app
 
-# Cleanup
-rm -R ${icon}
+# # Cleanup
+# rm -R ${icon}

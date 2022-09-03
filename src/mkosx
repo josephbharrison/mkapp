@@ -6,7 +6,7 @@ script_base=$(basename -- "$script")
 app_name=${script_base%.*}
 
 # Icon variables
-icon=$1
+icon=$2
 icon_base=$(basename -- "$script")
 icon_name=${icon_base%.*}
 
@@ -27,7 +27,7 @@ function usage(){
 
 ##### CREATE APP
 app_dir=${app_name}.app
-[[ -d $app_dir ]] && rm -R $app_dir || exit 1
+[[ -d $app_dir ]] && rm -R $app_dir 
 
 # Create MacOS ap/
 mkdir -p ${app_dir}/Contents/MacOS
