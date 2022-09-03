@@ -1,6 +1,6 @@
 # mkapp
 
-Convert shell script to Mac OS X App.
+Convert shell script to Mac OS X App
 
 ## Usage
 
