@@ -4,7 +4,7 @@ Convert shell script to Mac OS X application bundle.
 
 ## Usage
 
-```
+```sh
 usage: mkapp <script> <image>
 
 args:
@@ -14,6 +14,9 @@ args:
 
 ## Example
 
-`./mkapp examples/Icarus.sh examples/Icarus.png`
-![dock](https://github.com/josephbharrison/mkapp/tree/main/examples/dock.png?raw=true)
+```sh
+./mkapp examples/Icarus.sh examples/Icarus.png`
+```
+![dock](https://github.com/josephbharrison/mkapp/blob/main/examples/dock.png?raw=true)
+
 Example image: (@iaincollins [Icarus](https://github.com/iaincollins/icarus) 2022)
