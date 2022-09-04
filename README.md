@@ -14,4 +14,4 @@ args:
 
 ## Example
 
-`./mkapp sample/Icarus.sh sample/Icarus.png`
+`./mkapp examples/Icarus.sh examples/Icarus.png`

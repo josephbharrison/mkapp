@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+WRAPPED=true
+
 # Script variables
 script=$1
 script_base=$(basename -- "$script")
@@ -29,10 +31,19 @@ function usage(){
 app_dir=${app_name}.app
 [[ -d $app_dir ]] && rm -R $app_dir 
 
-# Create MacOS ap/
+# Create MacOS app/
 mkdir -p ${app_dir}/Contents/MacOS
-cp ${script} ${app_dir}/Contents/MacOS/${app_name}
-chmod +x ${app_dir}/Contents/MacOS/${app_name}
+
+# Create wrapper of explicit script 
+if [[ $WRAPPED ]];then
+    cp ${script} ${app_dir}/Contents/MacOS/wrapped.sh
+    chmod +x ${app_dir}/Contents/MacOS/wrapped.sh
+    cp templates/wrapper.sh ${app_dir}/Contents/MacOS/${app_name}
+    chmod +x ${app_dir}/Contents/MacOS/${app_name}
+else
+    cp ${script} ${app_dir}/Contents/MacOS/${app_name}
+    chmod +x ${app_dir}/Contents/MacOS/${app_name}
+fi
 
 # Create app resources
 mkdir -p ${app_dir}/Contents/Resources
