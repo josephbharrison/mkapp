@@ -15,7 +15,7 @@ args:
 ## Example
 
 ```sh
-./mkapp examples/Icarus.sh examples/Icarus.png`
+./mkapp examples/Icarus.sh examples/Icarus.png
 ```
 ![dock](https://github.com/josephbharrison/mkapp/blob/main/examples/dock.png?raw=true)
 
