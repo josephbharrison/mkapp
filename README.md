@@ -1,6 +1,6 @@
 # mkapp
 
-Convert shell script to Mac OS X App, and render hi-res icon from PNG.
+Convert shell script to Mac OS X application bundle.
 
 ## Usage
 
