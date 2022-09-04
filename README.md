@@ -15,3 +15,4 @@ args:
 ## Example
 
 `./mkapp examples/Icarus.sh examples/Icarus.png`
+![dock](https://github.com/josephbharrison/mkapp/tree/main/examples/dock.png?raw=true)
