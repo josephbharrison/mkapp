@@ -8,7 +8,7 @@ Convert executable to Mac OS X application bundle.
 usage: mkapp <executable> <image>
 
 args:
-    script: shell script             ex: Icarus.sh
+    exec:  execuatble                ex: Icarus.sh
     image: 1024 x 1024 PNG image     ex: Icarus.png
 ```
 
