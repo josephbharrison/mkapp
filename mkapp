@@ -11,8 +11,8 @@ function usage(){
     echo "usage: mkapp <script> <image>"
     echo
     echo "args:"
-    echo "    script: shell script             ex: myapp.sh"
-    echo "    image: 1024 x 1024 PNG image     ex: icarus.png"
+    echo "    app:   path to executable        ex: myapp.sh"
+    echo "    image: path to png image         ex: icarus.png"
 }
 
 # Check script args
