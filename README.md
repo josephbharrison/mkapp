@@ -5,7 +5,7 @@ Convert executable to Mac OS X application bundle.
 ## Usage
 
 ```sh
-usage: mkapp <script> <image>
+usage: mkapp <executable> <image>
 
 args:
     script: shell script             ex: Icarus.sh
