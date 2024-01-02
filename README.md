@@ -1,6 +1,6 @@
 # mkapp
 
-Convert shell script to Mac OS X application bundle.
+Convert executable to Mac OS X application bundle.
 
 ## Usage
 
