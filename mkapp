@@ -16,7 +16,7 @@ function usage(){
 }
 
 # Check script args
-[[ ! -f $script ]] && echo "script not found" && usage && exit 1
+[[ ! -f $script ]] && echo "exec not found" && usage && exit 1
 
 # Check image args
 [[ ! -f $image ]] && echo "image not found" && usage && exit 1
