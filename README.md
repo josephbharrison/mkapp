@@ -5,10 +5,10 @@ Convert executable to Mac OS X application bundle.
 ## Usage
 
 ```sh
-usage: mkapp <executable> <image>
+usage: mkapp <app> <image>
 
 args:
-    exec:  path to execuable         ex: Icarus.sh
+    app:   path to execuable         ex: Icarus.sh
     image: path to image             ex: Icarus.png
 ```
 
